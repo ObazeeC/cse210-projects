@@ -10,10 +10,13 @@ public Fraction () {
 }
 
 public Fraction (int number){
+_top = number;
 _bottom = 1;
 }
 
 public Fraction (int firstNumber, int secondNumber){
+    _top = firstNumber;
+    _bottom = secondNumber;
 
 }
 
