@@ -1,5 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
@@ -29,17 +31,35 @@ class Program
         Console.WriteLine("5. Quit");
         Console.Write("What would you like to do ?");
         choice = Console.ReadLine();
+
+
+     
+       
         switch (choice){
             case "1":
-    Journal addone = new Journal ();
-          addone.AddEntry();
-          
+            Journal j2 = new Journal ();
+     Entry myEntry = new Entry();
+     DateTime date = DateTime.Now;
+     myEntry._date = date.ToShortDateString();
+
+     PromptGenerator prompt = new PromptGenerator();
+      myEntry._PromptText = prompt.GetRandomPrompt();
+        Console.WriteLine(prompt.GetRandomPrompt());   
+
+      myEntry._entryText = Console.ReadLine();
+
+      //_entries.Add(myEntry);
+     j2._entries.Add(myEntry);
+    //Journal add = new Journal();
+      //add.AddEntry();
+         
+        // jo.AddEntry(_entries);
           
     
    //Console.ReadLine();
             
-    //PromptGenerator prompt = new PromptGenerator();
-    //Console.WriteLine(prompt.GetRandomPrompt());   
+  //  PromptGenerator prompt = new PromptGenerator();
+   // Console.WriteLine(prompt.GetRandomPrompt());   
       
 
      //Entry items = new Entry();
@@ -48,9 +68,8 @@ class Program
 
             break;
              case "2":
-             Journal dAll = new Journal ();
-
-             dAll.DisplayAll();
+             Journal d = new Journal ();
+            d.DisplayAll();
              
             break;
         

@@ -1,53 +1,47 @@
 using System;
-using System.IO.Enumeration;
-using System.Runtime.CompilerServices;
-public class Journal
+using System.Collections.Generic;
+public class Journal 
 {
-   //  public List<Entry> _entries = new List<Entry>();
-  public List<Entry> _entries = new List <Entry>();
-   public void AddEntry()
+public List<Entry> _entries = new List<Entry>();
 
-   {
-
-       Entry items = new Entry();
-       DateTime thecurrentTime = DateTime.Now;
-      items._date  = thecurrentTime.ToShortDateString();
-   
-
-        PromptGenerator prompt = new PromptGenerator();
-         items._promptText = prompt.GetRandomPrompt();
-         Console.WriteLine(items._promptText);
-        //Console.WriteLine(prompt.GetRandomPrompt());
-  
-
-         items._entryText = Console.ReadLine();
-        _entries.Add(items);
-     // Console.WriteLine(_entries);
-
-     
-   }
-   public void DisplayAll()
-   {
-    foreach (Entry x in _entries)
+    public void AddEntry()
     {
-        x.Display();
-        Console.WriteLine(x);
+     Entry myEntry = new Entry();
+     DateTime date = DateTime.Now;
+     myEntry._date = date.ToShortDateString();
+
+     PromptGenerator prompt = new PromptGenerator();
+      myEntry._PromptText = prompt.GetRandomPrompt();
+        Console.WriteLine(prompt.GetRandomPrompt());   
+
+      myEntry._entryText = Console.ReadLine();
+
+      _entries.Add(myEntry);
+      
+     // foreach (Entry p in _entries)
+     //{
+       Console.WriteLine(myEntry._entryText);
+             Console.WriteLine(myEntry._date);
+                   Console.WriteLine(myEntry._PromptText);
+      //       Console.WriteLine(p._entryText);
+     // }
+    }
+
+    public void DisplayAll()
+    {
+    foreach (Entry i in _entries)
+    {
+        i.Display();
+    }
     }
    
-      
-   }
-   
-   public void SaveToFile (string fileName)
-   {
-string nameOfFile = "journal.txt";
- using (StreamWriter outputFile = new StreamWriter(nameOfFile)){
+    public void SaveToFile (string fileName)
+    {
 
-    outputFile.WriteLine(Console.ReadLine());
- }
-   }
+    }
 
-   public void LoadFromFile(string fileName)
-   {
+    public void LoadFromFile(string fileName)
+    {
 
-   }
+    }
 }
