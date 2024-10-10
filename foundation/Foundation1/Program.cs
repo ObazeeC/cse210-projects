@@ -17,7 +17,7 @@ public class Program
         v2._author ="Penpower";
         v2._title="How to browse the internet";
         v2._length = 150 ;
-        Komments k1 = new Komments();
+        Comments k1 = new Comments();
         k1._commentText="I love this video";
         k1._name ="ESES";
 

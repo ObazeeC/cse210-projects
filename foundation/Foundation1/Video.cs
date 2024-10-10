@@ -11,7 +11,7 @@ public class Video
 
 
 
-    public List<Komments> _comments = new List<Komments> ();
+    public List<Comments> _comments = new List<Comments> ();
         
        
 public Video(){
@@ -23,7 +23,7 @@ public Video(){
         Console.WriteLine($"Title:{_title}");
         Console.WriteLine($"Author:{_author}");
         Console.WriteLine($"Length:{_length}");
-     foreach (Komments x in _comments)
+     foreach (Comments x in _comments)
      {
          //_title, author, length, number of comments(from the method)
 
