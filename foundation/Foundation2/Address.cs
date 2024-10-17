@@ -12,7 +12,7 @@ public class Address{
         }
         return usa;
     }
-    public string GetAllString(){
+    public string DisplayAllString(){
         string allString = "";
        // allString = _street + _city + _state + _country;
        allString = $"{_street} {_city} {_state} \n{_country}";
